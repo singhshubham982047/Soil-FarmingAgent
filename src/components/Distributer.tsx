@@ -5,6 +5,15 @@ import axios from "axios";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { LoaderCircle } from "lucide-react";
 
+interface Distributer {
+  _id?: string;
+  name: string;
+  email: string;
+  phone: string;
+  address: string;
+  areaOfDistribution?: string;
+}
+
 const Distributer = () => {
   const getDistributer = async () => {
     const { data } = await axios.get("/api/get-distributer-detail");
@@ -45,7 +54,7 @@ const Distributer = () => {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-      {data?.distributers?.map((distributer: any) => (
+      {data?.distributers?.map((distributer: Distributer) => (
         <Card key={distributer._id} className="mt-4 w-full">
           <CardHeader>
             <CardTitle>Seed Distributor</CardTitle>
