@@ -111,7 +111,7 @@ const Navbar = async () => {
           <SheetContent className="flex flex-col text-xl font-medium text-green-600 justify-center items-center">
             <Link href={"/"}>Home</Link>
             <Link href={"/services"}>Services</Link>
-            <Link href={"/"}>About</Link>
+            <Link href={"/about"}>About</Link>
             <Link href={"/contact"}>Contact</Link>
 
             {session?.user ? (

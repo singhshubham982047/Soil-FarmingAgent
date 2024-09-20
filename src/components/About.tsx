@@ -57,11 +57,12 @@ const About = () => {
       <section className="w-full my-12 bg-white p-8 shadow-md rounded-md">
         <h2 className="text-3xl font-bold text-green-600 mb-4">Our Vision</h2>
         <p className="text-lg text-gray-600">
-          We envision a world where agriculture is in harmony with nature—where
-          farmers can maximize productivity without compromising the
-          environment. Through innovation, education, and collaboration, we are
-          building a future where farming thrives sustainably, feeding the
-          world’s growing population while safeguarding our planet’s resources.
+          We envision a world where agriculture is in harmony with
+          nature&mdash;where farmers can maximize productivity without
+          compromising the environment. Through innovation, education, and
+          collaboration, we are building a future where farming thrives
+          sustainably, feeding the world&apos;s growing population while
+          safeguarding our planet&apos;s resources.
         </p>
       </section>
 
@@ -69,9 +70,10 @@ const About = () => {
       <section className="w-full my-12 bg-white p-8 shadow-md rounded-md text-center">
         <h2 className="text-3xl font-bold text-green-600 mb-4">Join Us</h2>
         <p className="text-lg text-gray-600 mb-4">
-          Whether you're a farmer, seed distributor, or simply passionate about
-          sustainable agriculture, we invite you to join us in revolutionizing
-          farming. Together, we can create a brighter, more sustainable future.
+          Whether you&apos;re a farmer, seed distributor, or simply passionate
+          about sustainable agriculture, we invite you to join us in
+          revolutionizing farming. Together, we can create a brighter, more
+          sustainable future.
         </p>
         <Link
           href="/contact"
