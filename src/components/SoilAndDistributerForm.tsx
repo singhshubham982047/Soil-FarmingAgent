@@ -20,6 +20,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
+import { AxiosError } from "axios";
 
 type DistributerData = z.infer<typeof DistributerSchema>;
 type SoilData = z.infer<typeof SoilSchema>;
@@ -53,7 +54,7 @@ const SoilAndDistributerForm = () => {
     onSuccess: () => {
       toast.success("Distributer added successfully");
     },
-    onError: (error: any) => {
+    onError: (error: AxiosError<{ message: string }>) => {
       toast.error(error?.response?.data?.message || "Error Adding Distributer");
     },
   });
