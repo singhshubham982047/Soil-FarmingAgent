@@ -1,13 +1,8 @@
 "use client";
-import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
@@ -17,15 +12,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Input } from "@/components/ui/input";
-import axios from "axios";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { z } from "zod";
 import { DistributerSchema } from "@/schemas/distributerSchema";
 import { SoilSchema } from "@/schemas/soilSchema";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import axios from "axios";
+import React, { useState } from "react";
 import { toast } from "sonner";
+import { z } from "zod";
 
 type DistributerData = z.infer<typeof DistributerSchema>;
 type SoilData = z.infer<typeof SoilSchema>;
