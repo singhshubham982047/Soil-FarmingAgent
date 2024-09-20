@@ -5,6 +5,16 @@ import { useQuery } from "@tanstack/react-query";
 import { Card, CardTitle, CardContent } from "./ui/card";
 import { LoaderCircle } from "lucide-react";
 
+interface SoilType {
+  _id?: string;
+  soilType: string;
+  description: string;
+  characteristics: string;
+  crops: string;
+  chemicalProperties: string;
+  locations: string;
+}
+
 const SoilList = () => {
   const getSoilType = async () => {
     const { data } = await axios.get("/api/get-soil-type");
@@ -28,7 +38,7 @@ const SoilList = () => {
 
   return (
     <div className="flex flex-col justify-center items-center space-y-2 m-6  min-h-dvh ">
-      {data?.soils.map((soilType: any) => (
+      {data?.soils.map((soilType: SoilType) => (
         <Card key={soilType._id} className="w-full rounded-sm p-4 space-y-4 ">
           <CardTitle className="flex items-center text-center justify-center font-mono text-lg bg-green-700 text-white/85 ">
             {soilType.soilType}
