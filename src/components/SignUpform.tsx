@@ -5,12 +5,18 @@ import { Button } from "./ui/button";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { useMutation } from "@tanstack/react-query";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { z } from "zod";
 import { SignUpSchema } from "@/schemas/signUpSchema";
 
 type SignUpData = z.infer<typeof SignUpSchema>;
-
+type ApiError = {
+  response?: {
+    data?: {
+      message?: string;
+    };
+  };
+};
 const SignUpform = () => {
   const router = useRouter();
   const [name, setName] = useState<string>("");
@@ -30,9 +36,10 @@ const SignUpform = () => {
         router.push("/sign-in");
       }
     },
-    onError: (error: any) => {
+    onError: (error: AxiosError<ApiError>) => {
       toast.error(
-        error?.response?.data?.message || "An error occurred during signup"
+        error?.response?.data.response?.data?.message ||
+          "An error occurred during signup"
       );
     },
   });
