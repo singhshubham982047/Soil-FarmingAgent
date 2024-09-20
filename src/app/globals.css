@@ -67,3 +67,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.link {
+  @apply px-5 py-[22px] hover:bg-green-600 hover:text-white ease-in-out duration-300;
+}
