@@ -21,6 +21,7 @@ import React, { useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
 import { AxiosError } from "axios";
+import { UseQueryResult } from "@tanstack/react-query";
 
 type DistributerData = z.infer<typeof DistributerSchema>;
 type SoilData = z.infer<typeof SoilSchema>;
@@ -66,12 +67,11 @@ const SoilAndDistributerForm = () => {
     },
     onMutate: async (newData) => {
       await queryClient.cancelQueries({ queryKey: ["soil"] });
-      const previousData = queryClient.getQueryData(["soil"]);
-      queryClient.setQueryData(["soil"], (oldData: any) => {
-        return {
-          ...oldData,
-          data: [...oldData.data, newData],
-        };
+      const previousData = queryClient.getQueryData(["soil"]) as
+        | UseQueryResult<SoilData[], Error>
+        | undefined;
+      queryClient.setQueryData(["soil"], (oldData: SoilData[] | undefined) => {
+        return oldData ? [...oldData, newData] : [newData];
       });
       return {
         previousData,
