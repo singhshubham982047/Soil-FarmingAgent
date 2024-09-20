@@ -37,6 +37,7 @@ const SoilAndDistributerForm = () => {
   const [chemicalProperties, setChemicalProperties] = useState<string>("");
   const [characteristics, setCharacteristics] = useState<string>("");
   const [locations, setLocations] = useState<string>("");
+  const [areaOfDistribution, setAreaOfDistribution] = useState<string>("");
 
   const queryClient = useQueryClient();
 
@@ -97,6 +98,7 @@ const SoilAndDistributerForm = () => {
       chemicalProperties,
       description,
       locations,
+      areaOfDistribution,
     });
 
     if (!result.success) {
@@ -104,14 +106,13 @@ const SoilAndDistributerForm = () => {
     }
     soilMutation(result.data);
 
-    console.log(result.data);
-
     setSoilType("");
     setCrops("");
     setCharacteristics("");
     setChemicalProperties("");
     setDescription("");
     setLocations("");
+    setAreaOfDistribution("");
   };
 
   const handleDistributer = (event: React.FormEvent) => {
@@ -175,6 +176,14 @@ const SoilAndDistributerForm = () => {
                   type="text"
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
+                  required
+                />
+                <Label htmlFor="address">Area of Distribution</Label>
+                <Input
+                  id="areaOfDistribution"
+                  type="text"
+                  value={areaOfDistribution}
+                  onChange={(e) => setAreaOfDistribution(e.target.value)}
                   required
                 />
 
