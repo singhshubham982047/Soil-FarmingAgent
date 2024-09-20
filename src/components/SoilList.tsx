@@ -17,7 +17,7 @@ interface SoilType {
 
 const SoilList = () => {
   const getSoilType = async () => {
-    const { data } = await axios.get("/api/get-soil-type");
+    const { data } = await axios.get("/api/get-soil-detail");
     return data;
   };
 
