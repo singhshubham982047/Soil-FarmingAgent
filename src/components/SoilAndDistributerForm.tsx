@@ -77,7 +77,7 @@ const SoilAndDistributerForm = () => {
         previousData,
       };
     },
-    onError: (error: any, _data, context) => {
+    onError: (error: AxiosError<{ message: string }>, _data, context) => {
       queryClient.setQueriesData({ queryKey: ["soil"] }, context?.previousData);
       toast.error(
         error?.response?.data?.message || "Error Adding Soil Details"
