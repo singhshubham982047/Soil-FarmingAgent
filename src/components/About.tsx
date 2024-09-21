@@ -83,7 +83,7 @@ const About = () => {
         <section className="w-full my-12 bg-white p-8 shadow-md rounded-md text-center">
           <h2 className="text-3xl font-bold text-green-600 mb-4">Join Us</h2>
           <p className="text-lg text-gray-600 mb-4">
-            Whether you're a farmer, seed distributor, or simply passionate
+            Whether you&apos;re a farmer, seed distributor, or simply passionate
             about sustainable agriculture, we invite you to join us in
             revolutionizing farming. Together, we can create a brighter, more
             sustainable future.
