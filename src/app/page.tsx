@@ -1,5 +1,6 @@
 import AnimatedImage from "@/components/AnimateImage";
 import AppearOnScroll from "@/components/AppearOnScroll";
+import Banner from "@/components/Banner";
 import Hero from "@/components/Hero";
 import ReviewCard from "@/components/ReviewCard";
 
@@ -97,25 +98,7 @@ export default function Home() {
         </section>
       </AppearOnScroll>
       <AppearOnScroll delay={1}>
-        <section id="about">
-          <div className="container  mx-auto p-4 pt-6 md:p-6 lg:p-12 xl:p-24 2xl:p-32  ">
-            <div className="flex flex-col text-center items-center justify-center border h-[300px] gap-4 rounded bg-orange-50 p-3">
-              <h1 className="text-3xl sm:text-6xl font-bold text-black/35">
-                Take Your Farm to New Heights
-              </h1>
-              <p>
-                Discover how Soil Farming Agent can transform your agricultural
-                operations and unlock unprecedented growth.
-              </p>
-              <Link
-                href={"/services"}
-                className="p-4 border-2  border-green-700 text-xl  font-bold "
-              >
-                Get Services
-              </Link>
-            </div>
-          </div>
-        </section>
+        <Banner />
       </AppearOnScroll>
       <AppearOnScroll delay={1}>
         <section id="testimonial">
