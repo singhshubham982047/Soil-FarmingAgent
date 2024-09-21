@@ -69,11 +69,11 @@ const About = () => {
           <h2 className="text-3xl font-bold text-green-600 mb-4">Our Vision</h2>
           <p className="text-lg text-gray-600">
             We envision a world where agriculture is in harmony with
-            nature—where farmers can maximize productivity without compromising
-            the environment. Through innovation, education, and collaboration,
-            we are building a future where farming thrives sustainably, feeding
-            the world’s growing population while safeguarding our planet’s
-            resources.
+            nature&mdash;where farmers can maximize productivity without
+            compromising the environment. Through innovation, education, and
+            collaboration, we are building a future where farming thrives
+            sustainably, feeding the world&apos;s growing population while
+            safeguarding our planet&apos;s resources.
           </p>
         </section>
       </AppearOnScroll>

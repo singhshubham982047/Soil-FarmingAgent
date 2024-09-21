@@ -4,8 +4,6 @@ import Banner from "@/components/Banner";
 import Hero from "@/components/Hero";
 import ReviewCard from "@/components/ReviewCard";
 
-import Link from "next/link";
-
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
