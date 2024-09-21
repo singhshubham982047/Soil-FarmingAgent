@@ -1,46 +1,91 @@
 "use client";
 
-import GradualSpacing from "./magicui/gradual-spacing";
-import TypingAnimation from "./magicui/typing-animation";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="flex mx-auto items-center justify-center min-h-screen bg-white dark:bg-gray-900">
-      <div className="mx-10  p-8  bg-hero bg-center bg-cover rounded-md shadow-md">
-        <div className="flex flex-col text-center gap-4 md:gap-8 font-bold ">
-          <TypingAnimation
-            className="text-3xl sm:text-6xl bg-gradient-to-r from-[#c51010ef] to-gray-400 text-transparent bg-clip-text"
-            text="Revolutionize Your Farm"
-          />
-          <TypingAnimation
-            className="text-3xl sm:text-6xl font-bold text-black/70 dark:text-white"
-            text="with"
-          />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="flex mx-auto items-center justify-center min-h-screen bg-white dark:bg-gray-900"
+    >
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="mx-10 p-8 bg-center  rounded-md shadow-md bg-hero bg-no-repeat bg-cover"
+      >
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="flex flex-col text-center gap-4 md:gap-6 font-bold"
+        >
+          <motion.h1
+            initial={{ letterSpacing: "-0.1em", opacity: 0, y: -50 }}
+            animate={{ letterSpacing: "normal", opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="font-display text-center text-3xl font-bold text-[#e0c31c] dark:text-white sm:text-5xl md:text-6xl md:leading-[5rem]"
+          >
+            Revolutionize Your Farm
+          </motion.h1>
+          <motion.h1
+            initial={{ letterSpacing: "-0.1em", opacity: 0 }}
+            animate={{ letterSpacing: "normal", opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="font-display text-center text-3xl font-bold text-gold dark:text-white sm:text-5xl md:text-5xl md:leading-[5rem]"
+          >
+            with
+          </motion.h1>
+          <motion.h1
+            initial={{ letterSpacing: "-0.1em", opacity: 0 }}
+            animate={{ letterSpacing: "normal", opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="font-display text-center text-3xl font-bold text-green-900 dark:text-white sm:text-5xl md:text-6xl md:leading-[5rem]"
+          >
+            Soil-Farming-Agent
+          </motion.h1>
+        </motion.div>
 
-          <GradualSpacing
-            className="font-display text-center text-3xl font-bold tracking-[-0.1em]  text-black dark:text-white sm:text-5xl md:text-7xl md:leading-[5rem]"
-            text="Soil-Farming-Agent"
-          />
-        </div>
-
-        <div className="flex flex-col justify-center items-center gap-4 mt-8">
-          <p className="text-xl text-center text-green-800 font-semibold">
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="flex flex-col justify-center items-center gap-4 mt-8"
+        >
+          <motion.p
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="w-2/3 text-xl text-center text-green-800 dark:text-white font-semibold"
+          >
             Unlock the full potential of your farm with our cutting-edge
             agricultural solutions. Boost productivity, optimize resources, and
             achieve sustainable growth.
-          </p>
-          <Link
-            href={"/services"}
-            className="p-4 border-2 text-white/75  border-green-700 text-xl  font-bold "
+          </motion.p>
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 1 }}
           >
-            Get Services
-          </Link>
-        </div>
+            <Link
+              href={"/services"}
+              className="p-4 border-2 text-green-900 bg-white/70 hover:bg-white/90 transition-colors duration-300 border-green-700 text-xl font-bold"
+            >
+              Get Services
+            </Link>
+          </motion.div>
+        </motion.div>
 
-        <div></div>
-      </div>
-    </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 1.2 }}
+        ></motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 
