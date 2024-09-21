@@ -7,14 +7,16 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Image from "next/image";
 import emailjs from "@emailjs/browser";
-import { motion } from "framer-motion"; // Add this import
+import { motion } from "framer-motion";
 
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID!;
 const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID!;
 const PUBLIC_KEY = process.env.NEXT_PUBLIC_KEY!;
 
-const Contact = () => {
+const Contact = ({ user }: { user: string }) => {
   const formRef = useRef<HTMLFormElement>(null);
+
+  console.log(user);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -93,8 +95,9 @@ const Contact = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <Button
-                  className="bg-green-600 hover:bg-green-700 w-full"
+                  className="bg-green-600 disabled:cursor-not-allowed hover:bg-green-700 w-full"
                   type="submit"
+                  disabled={user === ""}
                 >
                   Submit
                 </Button>
