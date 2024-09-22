@@ -1,8 +1,8 @@
 "use client";
 
-import { Card, CardContent, CardFooter, CardTitle } from "./ui/card";
-import Link from "next/link";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { Card, CardContent, CardFooter, CardTitle } from "./ui/card";
 
 const ServiceCard = ({
   src,
