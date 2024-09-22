@@ -12,12 +12,12 @@ const Banner = () => {
     >
       <div className="container mx-auto p-4 pt-6 md:p-6 lg:p-12 xl:p-24 2xl:p-32">
         <motion.div
-          className="flex flex-col text-center items-center justify-center border h-[300px] gap-4 rounded bg-orange-50 p-3"
+          className="flex flex-col text-center items-center justify-center border h-[300px] gap-6 rounded bg-[url('/hand-plant.svg')] bg-cover bg-center p-3"
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 300 }}
         >
           <motion.h1
-            className="text-3xl sm:text-6xl font-bold text-black/35"
+            className="text-3xl sm:text-6xl font-bold text-black/55"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
@@ -28,6 +28,7 @@ const Banner = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
+            className="text-xl text-center text-[#a9bc31] font-semibold"
           >
             Discover how Soil Farming Agent can transform your agricultural
             operations and unlock unprecedented growth.
@@ -35,7 +36,7 @@ const Banner = () => {
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
             <Link
               href={"/services"}
-              className="p-4 border-2 border-green-700 text-xl font-bold"
+              className="p-4 border-2 border-green-700 text-xl font-bold text-[#3ae045]"
             >
               Get Services
             </Link>

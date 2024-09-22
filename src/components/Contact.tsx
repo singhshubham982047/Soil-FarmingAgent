@@ -46,7 +46,7 @@ const Contact = ({ user }: { user: string }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col sm:flex-row justify-center items-center  min-h-screen"
+      className="flex flex-col sm:flex-row justify-center items-center gap-6  min-h-screen"
     >
       <motion.div
         initial={{ y: -50, opacity: 0 }}
@@ -62,7 +62,7 @@ const Contact = ({ user }: { user: string }) => {
         transition={{ delay: 0.4, duration: 0.5 }}
         className="w-full"
       >
-        <Card className="sm:w-[400px]">
+        <Card className="sm:w-[400px] p-4">
           <CardHeader>
             <h2 className="text-lg font-bold">Contacts</h2>
           </CardHeader>

@@ -40,6 +40,7 @@ const page = async () => {
             action={async () => {
               "use server";
               await signIn("google");
+              redirect("/");
             }}
           >
             <Button

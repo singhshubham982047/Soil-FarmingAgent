@@ -104,6 +104,9 @@ export default function Home() {
             className="container mx-auto p-4 pt-6 md:p-6 lg:p
         -12 xl:p-24 2xl:p-32"
           >
+            <h2 className="text-3xl text-center font-bold text-gray-900 dark:text-white mb-4">
+              Testimonials
+            </h2>
             <ReviewCard />
           </div>
         </section>

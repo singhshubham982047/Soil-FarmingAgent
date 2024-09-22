@@ -32,8 +32,6 @@ const ServiceCard = ({
               <motion.img
                 src={src}
                 className="max-h-[250px] w-[350px] object-cover"
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.3 }}
               />
             </CardContent>
             <CardFooter className="flex flex-col items-center text-center">

@@ -1,3 +1,4 @@
+import { signIn } from "@/auth";
 import SignUpform from "@/components/SignUpform";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 const page = () => {
   return (
@@ -30,7 +32,13 @@ const page = () => {
         </CardContent>
         <CardFooter className="flex flex-col gap-4">
           <span>or</span>
-          <form action="">
+          <form
+            action={async () => {
+              "use server";
+              await signIn("google");
+              redirect("/");
+            }}
+          >
             <Button
               variant="outline"
               className="border-green-500"

@@ -47,7 +47,7 @@ const Footer = () => {
         <div>
           <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
           <p className="flex items-center">
-            <Mail className="mr-2" /> info@soilfarmingagent.com
+            <Mail className="mr-2" /> soilfarmingagent@gmail.com
           </p>
           <p className="flex items-center mt-2">
             <Phone className="mr-2" /> +123 456 7890

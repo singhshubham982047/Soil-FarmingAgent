@@ -5,12 +5,16 @@ import React from "react";
 import { toast } from "sonner";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
+import { motion } from "framer-motion";
 
 const LoginForm = () => {
   const router = useRouter();
   return (
-    <form
+    <motion.form
       className="flex flex-col gap-4"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
       action={async (formData) => {
         const email = formData.get("email") as string;
         const password = formData.get("password") as string;
@@ -27,18 +31,39 @@ const LoginForm = () => {
         } else toast.error(`${error}`, { id: toastId });
       }}
     >
-      <Input id="name" name="email" placeholder="Email" required />
-      <Input
-        id="password"
-        name="password"
-        type="password"
-        required
-        placeholder="Password"
-      />
-      <Button type="submit" className="bg-green-500 hover:bg-green-600">
-        Login
-      </Button>
-    </form>
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
+      >
+        <Input id="name" name="email" placeholder="Email" required />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.4, duration: 0.5 }}
+      >
+        <Input
+          id="password"
+          name="password"
+          type="password"
+          required
+          placeholder="Password"
+        />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.5 }}
+      >
+        <Button
+          type="submit"
+          className="bg-green-500 hover:bg-green-600 w-full"
+        >
+          Login
+        </Button>
+      </motion.div>
+    </motion.form>
   );
 };
 

@@ -51,19 +51,16 @@ const Navbar = async () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-48">
               <div className="flex items-center gap-2 p-2">
-                <div className="grid gap-0.5 leading-none">
-                  {session?.user && (
-                    <>
-                      <div className="font-semibold">{session.user.name}</div>
-                      <div className="text-sm text-muted-foreground">
-                        {session.user.email}
-                      </div>
-                    </>
-                  )}
-                </div>
+                {session?.user && (
+                  <div className="grid gap-0.5 leading-none">
+                    <div className="font-semibold">{session.user.name}</div>
+                    <div className="text-sm text-muted-foreground">
+                      {session.user.email}
+                    </div>
+                    <DropdownMenuSeparator />
+                  </div>
+                )}
               </div>
-
-              <DropdownMenuSeparator />
 
               {session?.user ? (
                 <form
@@ -84,21 +81,21 @@ const Navbar = async () => {
                   </DropdownMenuItem>
                 </form>
               ) : (
-                <DropdownMenuItem className="cursor-pointer ">
-                  <Link
-                    href={"/sign-in"}
-                    className="hidden md:flex  font-semibold  "
-                  >
+                <Link
+                  href={"/sign-in"}
+                  className="hidden md:flex  font-semibold  "
+                >
+                  <DropdownMenuItem className="cursor-pointer w-full ">
                     Login
-                  </Link>
-                </DropdownMenuItem>
+                  </DropdownMenuItem>
+                </Link>
               )}
               {session?.user.role === "ADMIN" && (
-                <DropdownMenuItem className="cursor-pointer ">
-                  <Link className="font-hidden" href={"/admin/dashboard"}>
+                <Link className="font-hidden" href={"/admin/dashboard"}>
+                  <DropdownMenuItem className="cursor-pointer w-full ">
                     Dashboard
-                  </Link>
-                </DropdownMenuItem>
+                  </DropdownMenuItem>
+                </Link>
               )}
             </DropdownMenuContent>
           </DropdownMenu>
